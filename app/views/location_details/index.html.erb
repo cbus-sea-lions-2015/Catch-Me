@@ -1,0 +1,26 @@
+<h1>Location crap</h1>
+<p><button onclick="getLocationData()" class="btn btn-danger"> Get location</button></p>
+
+<p><%= form_for :location do |f| %></p>
+  <p><%= f.label :latitude, "Latitude" %>
+  <%= f.text_field :latitude %></p>
+  <p><%= f.label :longitude, "Longitude" %>
+  <%= f.text_field :longitude %></p>
+  <p><%= f.submit "Submit", :disable_with => 'Submiting...', class:"btn btn-danger" %></p>
+<% end %>
+
+
+<table>
+<tr>
+<th>Id</th>
+  <th>Latitude</th>
+  <th>Longitude</th>
+</tr>
+<% @locations.each do |loc| %>
+<tr>
+  <td><%= loc.id %></td>
+  <td><%= loc.latitude %></td>
+  <td><%= loc.longitude %></td>
+</tr>
+<% end %>
+</table>
