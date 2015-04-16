@@ -5,14 +5,26 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-LocationDetail.create(latitude: 40.0431503, longitude: -82.9182274)
-LocationDetail.create(latitude: 40.0431812, longitude: -82.918212)
-LocationDetail.create(latitude: 40.043176, longitude: -82.9182113)
-LocationDetail.create(latitude: 40.0431709, longitude: -82.918214)
-LocationDetail.create(latitude: 40.0431682, longitude: -82.9182155)
-LocationDetail.create(latitude: 40.0431548, longitude: -82.9182169)
-LocationDetail.create(latitude: 40.0431174, longitude: -82.9182165)
-LocationDetail.create(latitude: 40.0430874, longitude: -82.9182169)
-LocationDetail.create(latitude: 40.0430463, longitude: -82.9182181)
-LocationDetail.create(latitude: 40.043029, longitude: -82.9182118)
-LocationDetail.create(latitude: 40.0428463, longitude: -82.918305)
+require 'faker'
+
+10.times do 
+  username = Faker::Internet.user_name
+	User.create(name: Faker::Name.name,
+				username: Faker::Internet.user_name, 
+				handle: "@#{username}",
+				password_digest: '1234',
+				about_me: Faker::Lorem.sentence(3))
+end
+
+pantera = User.create(name: 'pantera',
+				username: 'pantera', 
+				handle: "@pantera",
+				password_digest: 'pantera',
+				about_me: Faker::Lorem.sentence(3))
+
+pantera = User.all.last
+
+Route.create(name: 'pain road',
+			creator: pantera, 
+			country: 'Brasil',
+			city: 'Manaus')
