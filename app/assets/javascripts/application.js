@@ -13,3 +13,25 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+// var latitude = $('form').find('input')[2];
+// var longitude = $('form').find('input')[3];
+
+function getLocationData() {
+    // if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    // } else { 
+        // x.innerHTML = "Geolocation is not supported by this browser.";
+    // }
+}
+
+function showPosition(position) {
+    $('form').find('input')[2].value =  position.coords.latitude;
+    $('form').find('input')[3].value = position.coords.longitude;  
+}
+
+
+
+
+
+

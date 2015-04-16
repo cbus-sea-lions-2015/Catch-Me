@@ -1,2 +1,25 @@
+<button onclick="getLocationData()"> Get location</button>
+
+<%= form_for :location do |f| %>
+  <%= f.label :latitude, "Latitude" %>
+  <%= f.text_field :latitude %>
+  <%= f.label :longitude, "Longitude" %>
+  <%= f.text_field :longitude %>
+  <%= f.submit "Submit", :disable_with => 'Submiting...' %>
+<% end %>
 
 
+<table>
+<tr>
+<th>Id</th>
+  <th>Latitude</th>
+  <th>Longitude</th>
+</tr>
+<% @locations.each do |loc| %>
+<tr>
+  <td><%= loc.id %></td>
+  <td><%= loc.latitude %></td>
+  <td><%= loc.longitude %></td>
+</tr>
+<% end %>
+</table>
