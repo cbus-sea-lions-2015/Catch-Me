@@ -1,3 +1,177 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Simple Polylines</title>
+    <style>
+      html, body, #map-canvas {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
+    <script>
+// This example creates a 2-pixel-wide red polyline showing
+// the path of William Kingsford Smith's first trans-Pacific flight between
+// Oakland, CA, and Brisbane, Australia.
+
+function initialize() {
+  var mapOptions = {
+    zoom: 40,
+    center: new google.maps.LatLng(40.043150, -82.918227),
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+
+  var map = new google.maps.Map(document.getElementById('map-canvas'),
+      mapOptions);
+
+  var flightPlanCoordinates = [
+
+new google.maps.LatLng(40.043150, -82.918227),
+new google.maps.LatLng(40.043181, -82.918212),
+new google.maps.LatLng(40.043176, -82.918211),
+new google.maps.LatLng(40.043171, -82.918214),
+new google.maps.LatLng(40.043168, -82.918216),
+new google.maps.LatLng(40.043155, -82.918217),
+new google.maps.LatLng(40.043117, -82.918216),
+new google.maps.LatLng(40.043087, -82.918217),
+new google.maps.LatLng(40.043046, -82.918218),
+new google.maps.LatLng(40.043029, -82.918212),
+new google.maps.LatLng(40.042846, -82.918305),
+new google.maps.LatLng(40.043150, -82.918227),
+new google.maps.LatLng(40.043181, -82.918212),
+new google.maps.LatLng(40.043176, -82.918211),
+new google.maps.LatLng(40.043171, -82.918214),
+new google.maps.LatLng(40.043168, -82.918216),
+new google.maps.LatLng(40.043155, -82.918217),
+new google.maps.LatLng(40.043117, -82.918216),
+new google.maps.LatLng(40.043087, -82.918217),
+new google.maps.LatLng(40.043046, -82.918218),
+new google.maps.LatLng(40.043029, -82.918212),
+new google.maps.LatLng(40.042846, -82.918305),
+new google.maps.LatLng(40.043150, -82.918227),
+new google.maps.LatLng(40.043181, -82.918212),
+new google.maps.LatLng(40.043176, -82.918211),
+new google.maps.LatLng(40.043171, -82.918214),
+new google.maps.LatLng(40.043168, -82.918216),
+new google.maps.LatLng(40.043155, -82.918217),
+new google.maps.LatLng(40.043117, -82.918216),
+new google.maps.LatLng(40.043087, -82.918217),
+new google.maps.LatLng(40.043046, -82.918218),
+new google.maps.LatLng(40.043029, -82.918212),
+new google.maps.LatLng(40.042846, -82.918305),
+new google.maps.LatLng(40.043150, -82.918227),
+new google.maps.LatLng(40.043181, -82.918212),
+new google.maps.LatLng(40.043176, -82.918211),
+new google.maps.LatLng(40.043171, -82.918214),
+new google.maps.LatLng(40.043168, -82.918216),
+new google.maps.LatLng(40.043155, -82.918217),
+new google.maps.LatLng(40.043117, -82.918216),
+new google.maps.LatLng(40.043087, -82.918217),
+new google.maps.LatLng(40.043046, -82.918218),
+new google.maps.LatLng(40.043029, -82.918212),
+new google.maps.LatLng(40.042846, -82.918305),
+new google.maps.LatLng(40.043150, -82.918227),
+new google.maps.LatLng(40.043181, -82.918212),
+new google.maps.LatLng(40.043176, -82.918211),
+new google.maps.LatLng(40.043171, -82.918214),
+new google.maps.LatLng(40.043168, -82.918216),
+new google.maps.LatLng(40.043155, -82.918217),
+new google.maps.LatLng(40.043117, -82.918216),
+new google.maps.LatLng(40.043087, -82.918217),
+new google.maps.LatLng(40.043046, -82.918218),
+new google.maps.LatLng(40.043029, -82.918212),
+new google.maps.LatLng(40.042846, -82.918305),
+new google.maps.LatLng(40.043150, -82.918227),
+new google.maps.LatLng(40.043181, -82.918212),
+new google.maps.LatLng(40.043176, -82.918211),
+new google.maps.LatLng(40.043171, -82.918214),
+new google.maps.LatLng(40.043168, -82.918216),
+new google.maps.LatLng(40.043155, -82.918217),
+new google.maps.LatLng(40.043117, -82.918216),
+new google.maps.LatLng(40.043087, -82.918217),
+new google.maps.LatLng(40.043046, -82.918218),
+new google.maps.LatLng(40.043029, -82.918212),
+new google.maps.LatLng(40.042846, -82.918305),
+new google.maps.LatLng(40.043150, -82.918227),
+new google.maps.LatLng(40.043181, -82.918212),
+new google.maps.LatLng(40.043176, -82.918211),
+new google.maps.LatLng(40.043171, -82.918214),
+new google.maps.LatLng(40.043168, -82.918216),
+new google.maps.LatLng(40.043155, -82.918217),
+new google.maps.LatLng(40.043117, -82.918216),
+new google.maps.LatLng(40.043087, -82.918217),
+new google.maps.LatLng(40.043046, -82.918218),
+new google.maps.LatLng(40.043029, -82.918212),
+new google.maps.LatLng(40.042846, -82.918305),
+new google.maps.LatLng(40.043150, -82.918227),
+new google.maps.LatLng(40.043181, -82.918212),
+new google.maps.LatLng(40.043176, -82.918211),
+new google.maps.LatLng(40.043171, -82.918214),
+new google.maps.LatLng(40.043168, -82.918216),
+new google.maps.LatLng(40.043155, -82.918217),
+new google.maps.LatLng(40.043117, -82.918216),
+new google.maps.LatLng(40.043087, -82.918217),
+new google.maps.LatLng(40.043046, -82.918218),
+new google.maps.LatLng(40.043029, -82.918212),
+new google.maps.LatLng(40.042846, -82.918305),
+new google.maps.LatLng(40.043150, -82.918227),
+new google.maps.LatLng(40.043181, -82.918212),
+new google.maps.LatLng(40.043176, -82.918211),
+new google.maps.LatLng(40.043171, -82.918214),
+new google.maps.LatLng(40.043168, -82.918216),
+new google.maps.LatLng(40.043155, -82.918217),
+new google.maps.LatLng(40.043117, -82.918216),
+new google.maps.LatLng(40.043087, -82.918217),
+new google.maps.LatLng(40.043046, -82.918218),
+new google.maps.LatLng(40.043029, -82.918212),
+new google.maps.LatLng(40.042846, -82.918305),
+new google.maps.LatLng(40.043150, -82.918227),
+new google.maps.LatLng(40.043181, -82.918212),
+new google.maps.LatLng(40.043176, -82.918211),
+new google.maps.LatLng(40.043171, -82.918214),
+new google.maps.LatLng(40.043168, -82.918216),
+new google.maps.LatLng(40.043155, -82.918217),
+new google.maps.LatLng(40.043117, -82.918216),
+new google.maps.LatLng(40.043087, -82.918217),
+new google.maps.LatLng(40.043046, -82.918218),
+new google.maps.LatLng(40.043029, -82.918212),
+new google.maps.LatLng(40.042846, -82.918305),
+new google.maps.LatLng(40.043150, -82.918227),
+new google.maps.LatLng(40.043181, -82.918212),
+new google.maps.LatLng(40.043176, -82.918211),
+new google.maps.LatLng(40.043171, -82.918214),
+new google.maps.LatLng(40.043168, -82.918216),
+new google.maps.LatLng(40.043155, -82.918217),
+new google.maps.LatLng(40.043117, -82.918216),
+new google.maps.LatLng(40.043087, -82.918217),
+new google.maps.LatLng(40.043046, -82.918218),
+new google.maps.LatLng(40.043029, -82.918212),
+new google.maps.LatLng(40.042846, -82.918305),
+new google.maps.LatLng(40.042877, -82.918255)
+  ];
+  var flightPath = new google.maps.Polyline({
+    path: flightPlanCoordinates,
+    geodesic: true,
+    strokeColor: '#FF0000',
+    strokeOpacity: 1.0,
+    strokeWeight: 2
+  });
+
+  flightPath.setMap(map);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
+  </head>
+  <body>
+
+  <button onclick="getLocationData()"> Get location</button>
+
 <h1>Location crap</h1>
 <p><button onclick="getLocationData()" class="btn btn-danger"> Get location</button></p>
 
@@ -24,3 +198,8 @@
 </tr>
 <% end %>
 </table>
+
+
+    <div id="map-canvas"></div>
+  </body>
+</html>
