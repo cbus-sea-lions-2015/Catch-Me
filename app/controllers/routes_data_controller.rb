@@ -1,0 +1,2 @@
+class RoutesDataController < ApplicationController
+end
