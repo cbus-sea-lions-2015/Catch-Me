@@ -1,9 +1,4 @@
 
-
-
-
-
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -177,12 +172,15 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
   <button onclick="getLocationData()"> Get location</button>
 
-<%= form_for :location do |f| %>
-  <%= f.label :latitude, "Latitude" %>
-  <%= f.text_field :latitude %>
-  <%= f.label :longitude, "Longitude" %>
-  <%= f.text_field :longitude %>
-  <%= f.submit "Submit", :disable_with => 'Submiting...' %>
+<h1>Location crap</h1>
+<p><button onclick="getLocationData()" class="btn btn-danger"> Get location</button></p>
+
+<p><%= form_for :location do |f| %></p>
+  <p><%= f.label :latitude, "Latitude" %>
+  <%= f.text_field :latitude %></p>
+  <p><%= f.label :longitude, "Longitude" %>
+  <%= f.text_field :longitude %></p>
+  <p><%= f.submit "Submit", :disable_with => 'Submiting...', class:"btn btn-danger" %></p>
 <% end %>
 
 
