@@ -1,0 +1,13 @@
+<h1>Sign Up</h1>
+
+<%= form_for @user do |f| %>
+  <p><%= f.label :name, "Name: " %>
+  <%= f.text_field :name %></p>
+  <p><%= f.label :handle, "Twitter Handle: @" %>
+  <%= f.text_field :handle %></p>
+  <p><%= f.label :username, "Username: " %>
+  <%= f.text_field :username %></p>
+  <p><%= f.label :password, "Password: " %>
+  <%= f.password_field :password %></p>
+  <p><%= f.submit :disable_with =>'Submitting...' %></p>
+<% end %>

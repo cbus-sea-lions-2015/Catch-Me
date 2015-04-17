@@ -8,6 +8,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body class="container">
+<img src="http://theworldsponsorshipmonitor.com/img/running.png" alt="" style="width: 90px"> <span style="font-size: 20px">Catch Me</span>
+<% if current_user %>
+<%= link_to "Logout", logout_path, class: "btn btn-danger" %>
+<% else %>
+<a href="/users/new" class="btn btn-primary">Sign Up</a>
+<a href="/sessions/new" class="btn btn-primary">Login</a>
+<% end %>
 
 <%= yield %>
 
