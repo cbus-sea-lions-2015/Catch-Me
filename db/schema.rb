@@ -16,18 +16,25 @@ ActiveRecord::Schema.define(version: 20150416192605) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "activities", force: :cascade do |t|
+  create_table "courses", force: :cascade do |t|
     t.integer  "user_id"
-    t.integer  "activities_point_id"
+    t.integer  "courses_point_id"
     t.integer  "average_speed"
     t.integer  "duration"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.integer  "distance"
+    t.string   "country"
+    t.string   "city"
+    t.string   "name"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
-  create_table "activity_points", force: :cascade do |t|
+  create_table "courses_points", force: :cascade do |t|
     t.integer  "longitude"
     t.integer  "latitude"
+    t.integer  "course_id"
+    t.integer  "altitude"
+    t.integer  "speed"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -37,15 +44,6 @@ ActiveRecord::Schema.define(version: 20150416192605) do
     t.string   "latitude"
     t.string   "longitude"
     t.integer  "order"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "routes", force: :cascade do |t|
-    t.integer  "creator_id"
-    t.string   "name"
-    t.string   "country"
-    t.string   "city"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

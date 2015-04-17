@@ -1,6 +1,6 @@
-class CreateCoursePoints < ActiveRecord::Migration
+class CreateCoursesPoints < ActiveRecord::Migration
   def change
-    create_table :activity_points do |t|
+    create_table :courses_points do |t|
       t.integer :longitude
       t.integer :latitude
       t.integer :course_id
