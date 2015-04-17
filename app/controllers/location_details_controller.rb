@@ -1,14 +1,12 @@
 class LocationDetailsController < ApplicationController
 
   def index
-
     @location = LocationDetail.new
     @locations = LocationDetail.all
-
   end
 
   def create
-    @location = LocationDetail.create(location_params)
+    @location = LocationDetail.create!(location_params)
     redirect_to root_path
   end
 

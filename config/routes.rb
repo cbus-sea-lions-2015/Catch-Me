@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  resources :activities_data
-  resources :routes_data
-  resources :routes
-  resources :activities
+  # resources :activities_data
+  # resources :routes_data
+  # resources :routes
+  # resources :activities
   resources :users
   resources :location_details
   resources :sessions

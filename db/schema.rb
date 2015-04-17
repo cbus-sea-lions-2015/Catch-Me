@@ -11,27 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150416192651) do
+ActiveRecord::Schema.define(version: 20150416192605) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "activities", force: :cascade do |t|
     t.integer  "user_id"
-    t.integer  "route_id"
-    t.integer  "avg_speed"
+    t.integer  "activities_point_id"
+    t.integer  "average_speed"
     t.integer  "duration"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
   end
 
-  create_table "activities_data", force: :cascade do |t|
-    t.integer  "longitud"
+  create_table "activity_points", force: :cascade do |t|
+    t.integer  "longitude"
     t.integer  "latitude"
-    t.datetime "datetime"
-    t.integer  "activity_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "location_details", force: :cascade do |t|
@@ -48,14 +46,6 @@ ActiveRecord::Schema.define(version: 20150416192651) do
     t.string   "name"
     t.string   "country"
     t.string   "city"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "routes_data", force: :cascade do |t|
-    t.integer  "longitud"
-    t.integer  "latitude"
-    t.integer  "route_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

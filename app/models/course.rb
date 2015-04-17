@@ -1,4 +1,4 @@
 class Activity < ActiveRecord::Base
-	has_many :activities_points
+	has_many :courses_points
   belongs_to :user
 end

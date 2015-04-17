@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_action :authenticate, only: [:new]
+  skip_before_action :authenticate, only: [:new, :create]
   def new
     @user = User.new
   end
@@ -14,6 +14,11 @@ class UsersController < ApplicationController
       render :new, alert: "You screwed up"
     end
   end
+
+  def update
+  end
+
+
 
   def show
     @user = User.find(params[:id])
