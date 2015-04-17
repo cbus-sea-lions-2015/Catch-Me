@@ -8,6 +8,10 @@ class ApisController < ActionController::Base
       nil
     end
  	end
+
+ 	def show
+      CoursesPoint.where(id: params[:id])
+ 	end
   
 end
 
