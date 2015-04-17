@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+  skip_before_action :authenticate, only: [:new]
   def new
     @user = User.new
   end
@@ -8,9 +8,10 @@ class UsersController < ApplicationController
     @user = User.new
     @user.update(user_signup_params)
     if @user.save
+      create_session(@user)
       redirect_to @user
     else
-      redirect_to :new, flash: "You screwed up"
+      render :new, alert: "You screwed up"
     end
   end
 
