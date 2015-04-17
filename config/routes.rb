@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   root 'location_details#index'
 
   get '/all_locations_for_map' => 'location_details#all_locations_for_map'
+  get '/logout', to: 'sessions#destroy'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
